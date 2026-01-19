@@ -53,7 +53,7 @@ export const Hero: React.FC = () => {
 
           <a
             href="tel:+37067000800"
-            className="w-full sm:w-auto bg-red-600 hover:bg-red-700 text-white px-8 md:px-10 py-4 md:py-5 rounded-xl font-bold uppercase tracking-widest text-sm transition-all flex items-center justify-center gap-3 shadow-lg shadow-red-900/40 group"
+            className="w-full sm:w-auto bg-red-600 hover:bg-red-700 text-white px-6 md:px-8 py-4 md:py-5 rounded-xl font-bold uppercase tracking-widest text-sm transition-all flex items-center justify-center gap-3 shadow-lg shadow-red-900/40 group"
           >
             <Phone size={18} className="fill-white group-hover:animate-pulse" />
             Skambinti
