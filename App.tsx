@@ -6,6 +6,7 @@ import { Process } from './components/Process';
 import { BeforeAfter } from './components/BeforeAfter';
 import { Delivery } from './components/Delivery';
 import { Contact } from './components/Contact';
+import { MobileCallBtn } from './components/MobileCallBtn';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <BeforeAfter />
         <Delivery />
         <Contact />
+        <MobileCallBtn />
       </main>
     </div>
   );
