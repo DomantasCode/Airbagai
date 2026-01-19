@@ -9,7 +9,7 @@ export const Hero: React.FC = () => {
   };
 
   return (
-    <div className="relative bg-zinc-950 min-h-screen flex items-center pt-24 md:pt-20 overflow-hidden">
+    <div className="relative bg-zinc-950 min-h-screen flex items-start md:items-center pt-32 md:pt-20 overflow-hidden">
       {/* Background with Overlay */}
       <div className="absolute inset-0 z-0">
         <img
