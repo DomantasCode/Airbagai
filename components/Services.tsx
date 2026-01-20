@@ -64,8 +64,8 @@ export const Services: React.FC = () => {
 
           {/* Main Large Card - Airbags */}
           <div className="md:col-span-2 bg-zinc-900 rounded-3xl p-6 md:p-10 relative overflow-hidden group h-full flex flex-col justify-between shadow-xl">
-            <div className="absolute top-0 right-0 p-6 md:p-10 opacity-10 group-hover:opacity-20 transition-opacity pointer-events-none translate-y-44 translate-x-[2px] md:translate-y-0 md:translate-x-0">
-              <Shield size={160} className="md:w-[280px] md:h-[280px] text-white" />
+            <div className="absolute top-0 right-0 p-6 md:p-10 opacity-10 group-hover:opacity-20 transition-opacity pointer-events-none translate-y-[215px] min-[400px]:translate-y-[185px] translate-x-[2px] md:translate-y-0 md:translate-x-0">
+              <Shield size={150} className="md:w-[280px] md:h-[280px] text-white" />
             </div>
             <div className="relative z-10">
               <div className="inline-block bg-red-600 text-white px-3 py-1 rounded-full text-[10px] md:text-xs font-bold uppercase tracking-wider mb-4 md:mb-6">
