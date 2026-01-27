@@ -1,109 +1,145 @@
 import React from 'react';
 import { SectionId } from '../types';
-import { Phone, Package, Globe, Truck } from 'lucide-react';
+import { Phone, Package, Globe, Truck, MapPin, ExternalLink } from 'lucide-react';
 
 export const Delivery: React.FC = () => {
-  return (
-    <section id={SectionId.DELIVERY} className="py-16 md:py-24 bg-zinc-900 relative overflow-hidden border-t border-zinc-800">
-      
-      {/* Subtle Static Background to indicate Global reach without being flashy */}
-      <div className="absolute inset-0 z-0 opacity-5 pointer-events-none">
-         <img 
-            src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/World_map_blank_without_borders.svg/2000px-World_map_blank_without_borders.svg.png" 
-            alt="World Map" 
-            className="w-full h-full object-cover invert"
-        />
-      </div>
+   return (
+      <section id={SectionId.DELIVERY} className="py-16 md:py-24 bg-zinc-900 relative overflow-hidden border-t border-zinc-800">
 
-      <div className="container mx-auto px-6 relative z-10">
-        
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20 items-start">
-          
-          {/* Left Column: Header + General Info */}
-          <div className="space-y-6 md:space-y-8">
-             {/* Header moved here for alignment */}
-             <div>
-                <span className="text-red-600 font-bold tracking-widest uppercase text-xs md:text-sm block mb-2 md:mb-3">Logistika</span>
-                <h2 className="text-3xl md:text-5xl font-black text-white uppercase leading-tight">
+         {/* Subtle Static Background */}
+         <div className="absolute inset-0 z-0 opacity-5 pointer-events-none">
+            <img
+               src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ec/World_map_blank_without_borders.svg/2000px-World_map_blank_without_borders.svg.png"
+               alt="World Map"
+               className="w-full h-full object-cover invert"
+            />
+         </div>
+
+         <div className="container mx-auto px-6 relative z-10">
+
+            <div className="text-center mb-16">
+               <span className="text-red-600 font-bold tracking-widest uppercase text-xs md:text-sm block mb-3">Logistika</span>
+               <h2 className="text-3xl md:text-5xl font-black text-white uppercase leading-tight max-w-3xl mx-auto">
                   Dalių Pristatymas
-                </h2>
-                <div className="w-16 md:w-24 h-1.5 bg-red-600 mt-4 md:mt-6"></div>
-             </div>
+               </h2>
+               <div className="w-24 h-1.5 bg-red-600 mt-6 mx-auto"></div>
+               <p className="text-zinc-400 text-lg mt-6 max-w-2xl mx-auto">
+                  Bendradarbiaujame su patikimais vežėjais, todėl užtikriname sklandų dalių pristatymą visame pasaulyje.
+               </p>
+            </div>
 
-             <div className="prose prose-invert">
-                <p className="text-lg md:text-2xl text-zinc-200 font-light leading-snug">
-                  Dalis pristatome Lietuvoje, Baltijos šalyse ir visoje Europoje.
-                </p>
-                <p className="text-zinc-400 text-base md:text-lg leading-relaxed mt-4">
-                  Suremontuotas dalis siunčiame ne tik vietinėje rinkoje, bet ir į kitas Europos šalis. Bendradarbiaujame su tarptautiniais logistikos partneriais, kad užtikrintume greitą detalių grąžinimą.
-                </p>
-             </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
 
-             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6 pt-2 md:pt-4">
-                {/* Feature 1 */}
-                <div className="flex items-center gap-4">
-                   <div className="bg-zinc-800 p-3 rounded-xl text-red-500 shrink-0">
-                      <Truck size={24} />
-                   </div>
-                   <div>
-                      <h4 className="text-white font-bold uppercase text-sm">Tarptautinis Siuntimas</h4>
-                   </div>
-                </div>
-
-                {/* Feature 2 */}
-                <div className="flex items-center gap-4">
-                   <div className="bg-zinc-800 p-3 rounded-xl text-red-500 shrink-0">
-                      <Package size={24} />
-                   </div>
-                   <div>
-                      <h4 className="text-white font-bold uppercase text-sm">Saugus Pakavimas</h4>
-                   </div>
-                </div>
-             </div>
-          </div>
-
-          {/* Right Column: Baltics Card (Clean, Professional Style) */}
-          <div className="relative pt-2">
-            <div className="bg-white rounded-3xl p-6 md:p-10 shadow-xl relative overflow-hidden group">
-               
-               {/* Decorative background icon */}
-               <div className="absolute top-0 right-0 p-8 opacity-5 transform translate-x-1/4 -translate-y-1/4">
-                  <Globe size={150} className="md:w-[200px] md:h-[200px]" />
-               </div>
-
-               <div className="relative z-10">
-                  <div className="flex items-center gap-3 mb-4 md:mb-6">
-                     <div className="bg-red-600 text-white px-3 py-1 rounded-md text-[10px] font-bold uppercase tracking-widest">
-                        Baltijos Šalys
-                     </div>
+               {/* Lietuva */}
+               <div className="bg-gradient-to-br from-zinc-800/80 to-zinc-900/80 backdrop-blur-sm border border-zinc-700/50 p-6 rounded-2xl hover:border-red-600/50 transition-all group relative overflow-hidden flex flex-col h-full">
+                  <div className="absolute -right-6 -bottom-6 text-zinc-800 opacity-20 group-hover:opacity-40 transition-opacity group-hover:scale-110 duration-500 pointer-events-none">
+                     <MapPin size={120} />
                   </div>
 
-                  <h3 className="text-2xl md:text-4xl font-black text-zinc-900 uppercase mb-3 md:mb-4">
-                     Į Latviją, Estiją
-                  </h3>
-                  
-                  <p className="text-zinc-500 text-sm md:text-base mb-6 md:mb-8 border-l-2 border-red-600 pl-4">
-                     Susisiekite dėl detalių pristatymo tiesiogiai žemiau nurodytu telefonu.
-                  </p>
+                  <div className="relative z-10 flex flex-col h-full">
+                     <div className="flex items-center gap-3 mb-6">
+                        <div className="bg-red-600/20 p-2.5 rounded-xl text-red-500 shadow-sm shadow-red-900/20">
+                           <MapPin size={28} />
+                        </div>
+                        <h3 className="text-xl font-black text-white uppercase tracking-wide">Lietuva</h3>
+                     </div>
 
-                  <a 
-                    href="tel:+37129222572" 
-                    className="flex items-center justify-between bg-zinc-900 hover:bg-zinc-800 text-white p-2 rounded-2xl transition-all group-hover:shadow-lg group-hover:shadow-red-600/20"
-                  >
-                     <div className="px-4 py-2 md:px-6 md:py-4">
-                        <span className="text-zinc-400 text-[10px] md:text-xs font-bold uppercase tracking-widest block mb-1">Skambinti</span>
-                        <span className="text-xl md:text-3xl font-bold font-mono">+371 292 22572</span>
+                     <div className="flex-grow space-y-3">
+                        {[
+                           { name: 'DPD', icon: Package },
+                           { name: 'Venipak', icon: Package },
+                           { name: 'Autobusų siuntos', icon: Truck },
+                        ].map((item, idx) => (
+                           <div key={idx} className="flex items-center gap-3 bg-zinc-950/30 p-3 rounded-lg border border-zinc-800/50">
+                              <item.icon size={18} className="text-red-500" />
+                              <span className="font-medium text-zinc-200">{item.name}</span>
+                           </div>
+                        ))}
                      </div>
-                     <div className="bg-red-600 w-12 h-12 md:w-16 md:h-16 rounded-xl flex items-center justify-center text-white shrink-0">
-                        <Phone size={24} className="md:w-[28px] md:h-[28px]" />
-                     </div>
-                  </a>
+                  </div>
                </div>
-            </div>
-          </div>
 
-        </div>
-      </div>
-    </section>
-  );
+               {/* Ispanija */}
+               <div className="bg-gradient-to-br from-zinc-800/80 to-zinc-900/80 backdrop-blur-sm border border-zinc-700/50 p-6 rounded-2xl hover:border-red-600/50 transition-all group relative overflow-hidden flex flex-col h-full">
+                  <div className="absolute -right-6 -bottom-6 text-zinc-800 opacity-20 group-hover:opacity-40 transition-opacity group-hover:scale-110 duration-500 pointer-events-none">
+                     <Globe size={120} />
+                  </div>
+
+                  <div className="relative z-10 flex flex-col h-full">
+                     <div className="flex items-center gap-3 mb-6">
+                        <div className="bg-red-600/20 p-2.5 rounded-xl text-red-500 shadow-sm shadow-red-900/20">
+                           <Globe size={28} />
+                        </div>
+                        <h3 className="text-xl font-black text-white uppercase tracking-wide">Ispanija</h3>
+                     </div>
+
+                     <div className="flex-grow flex flex-col justify-center bg-zinc-950/30 p-4 rounded-xl border border-zinc-800/50 text-center">
+                        <p className="text-zinc-400 text-sm font-bold uppercase tracking-widest mb-1">Kontaktas</p>
+                        <p className="text-2xl font-bold text-white mb-3">Rimantė</p>
+                        <a href="tel:+37062410352" className="inline-flex items-center justify-center gap-2 bg-red-600 hover:bg-red-700 text-white py-2 px-4 rounded-lg font-bold transition-colors w-full">
+                           <Phone size={18} />
+                           <span>+370 624 10 352</span>
+                        </a>
+                     </div>
+                  </div>
+               </div>
+
+               {/* Airija */}
+               <div className="bg-gradient-to-br from-zinc-800/80 to-zinc-900/80 backdrop-blur-sm border border-zinc-700/50 p-6 rounded-2xl hover:border-red-600/50 transition-all group relative overflow-hidden flex flex-col h-full">
+                  <div className="absolute -right-6 -bottom-6 text-zinc-800 opacity-20 group-hover:opacity-40 transition-opacity group-hover:scale-110 duration-500 pointer-events-none">
+                     <Globe size={120} />
+                  </div>
+
+                  <div className="relative z-10 flex flex-col h-full">
+                     <div className="flex items-center gap-3 mb-6">
+                        <div className="bg-red-600/20 p-2.5 rounded-xl text-red-500 shadow-sm shadow-red-900/20">
+                           <Globe size={28} />
+                        </div>
+                        <h3 className="text-xl font-black text-white uppercase tracking-wide">Airija</h3>
+                     </div>
+
+                     <div className="flex-grow flex flex-col justify-center bg-zinc-950/30 p-4 rounded-xl border border-zinc-800/50 text-center">
+                        <p className="text-zinc-400 text-sm font-bold uppercase tracking-widest mb-1">Vežėjas</p>
+                        <p className="text-xl font-bold text-white mb-3">MV Transport</p>
+                        <a href="https://mvtransport.lt/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 bg-zinc-800 hover:bg-zinc-700 text-white py-2 px-4 rounded-lg font-bold transition-colors w-full border border-zinc-700">
+                           <span>Aplankyti svetainę</span>
+                           <ExternalLink size={18} />
+                        </a>
+                     </div>
+                  </div>
+               </div>
+
+               {/* Baltijos Šalys */}
+               <div className="bg-gradient-to-br from-zinc-800/80 to-zinc-900/80 backdrop-blur-sm border border-zinc-700/50 p-6 rounded-2xl hover:border-red-600/50 transition-all group relative overflow-hidden flex flex-col h-full">
+                  <div className="absolute -right-6 -bottom-6 text-zinc-800 opacity-20 group-hover:opacity-40 transition-opacity group-hover:scale-110 duration-500 pointer-events-none">
+                     <Globe size={120} />
+                  </div>
+
+                  <div className="relative z-10 flex flex-col h-full">
+                     <div className="flex items-center gap-3 mb-6">
+                        <div className="bg-red-600/20 p-2.5 rounded-xl text-red-500 shadow-sm shadow-red-900/20">
+                           <Globe size={28} />
+                        </div>
+                        <h3 className="text-xl font-black text-white uppercase tracking-wide">Baltijos Šalys</h3>
+                     </div>
+
+                     <div className="flex-grow flex flex-col justify-center bg-zinc-950/30 p-4 rounded-xl border border-zinc-800/50 text-center">
+                        <p className="text-zinc-400 text-sm font-bold uppercase tracking-widest mb-1">Šalys</p>
+                        <p className="text-xl font-bold text-white mb-3 flex items-center justify-center gap-2">
+                           <span>Latvija</span>
+                           <span className="text-red-600">•</span>
+                           <span>Estija</span>
+                        </p>
+                        <a href="tel:+37129222572" className="inline-flex items-center justify-center gap-2 bg-red-600 hover:bg-red-700 text-white py-2 px-4 rounded-lg font-bold transition-colors w-full">
+                           <Phone size={18} />
+                           <span>+371 292 22572</span>
+                        </a>
+                     </div>
+                  </div>
+               </div>
+
+            </div>
+         </div>
+      </section>
+   );
 };

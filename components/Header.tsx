@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { SectionId } from '../types';
-import { Menu, X, Phone, Wrench } from 'lucide-react';
+import { Menu, X, Phone, Wrench, Facebook } from 'lucide-react';
 
-export const Header: React.FC = () => {
+interface HeaderProps {
+  mobileMenuOpen: boolean;
+  setMobileMenuOpen: (open: boolean) => void;
+}
+
+export const Header: React.FC<HeaderProps> = ({ mobileMenuOpen, setMobileMenuOpen }) => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -47,7 +51,7 @@ export const Header: React.FC = () => {
           <nav className="hidden md:flex items-center gap-1 p-1 rounded-full border border-white/5 bg-black/20 backdrop-blur-md">
             {[
               { label: 'Paslaugos', id: SectionId.SERVICES },
-              { label: 'Procesas', id: SectionId.ABOUT },
+              { label: 'Apie mus', id: SectionId.ABOUT },
               { label: 'Darbai', id: SectionId.BEFORE_AFTER },
               { label: 'Dalių pristatymas', id: SectionId.DELIVERY },
               { label: 'Kontaktai', id: SectionId.CONTACT },
@@ -62,7 +66,16 @@ export const Header: React.FC = () => {
             ))}
           </nav>
 
-          <div className="hidden md:flex items-center">
+          <div className="hidden md:flex items-center gap-3">
+
+            <a
+              href="https://www.facebook.com/profile.php?id=61570498691373"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-12 h-12 flex items-center justify-center bg-white/10 hover:bg-red-600 text-white rounded-xl transition-all duration-300 group"
+            >
+              <Facebook size={20} className="group-hover:scale-110 transition-transform" />
+            </a>
             <a
               href="tel:+37067000800"
               className="flex items-center gap-2 bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-xl font-bold transition-all shadow-lg shadow-red-900/30 group"
@@ -83,16 +96,28 @@ export const Header: React.FC = () => {
       </header>
 
       {/* Mobile Menu Overlay */}
-      <div className={`fixed inset-0 z-40 bg-zinc-950 transition-transform duration-300 md:hidden flex flex-col pt-32 px-6 ${mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
-        <div className="flex flex-col gap-8 text-center">
+      <div className={`fixed inset-0 z-40 bg-zinc-950 transition-transform duration-300 md:hidden flex flex-col pt-24 px-6 ${mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'} overflow-y-auto pb-10`}>
+        <div className="flex flex-col gap-6 text-center">
+
           <button onClick={() => scrollTo(SectionId.SERVICES)} className="text-2xl font-black text-white uppercase tracking-wider">Paslaugos</button>
-          <button onClick={() => scrollTo(SectionId.ABOUT)} className="text-2xl font-black text-white uppercase tracking-wider">Procesas</button>
+          <button onClick={() => scrollTo(SectionId.ABOUT)} className="text-2xl font-black text-white uppercase tracking-wider">Apie mus</button>
           <button onClick={() => scrollTo(SectionId.BEFORE_AFTER)} className="text-2xl font-black text-white uppercase tracking-wider">Darbai</button>
           <button onClick={() => scrollTo(SectionId.DELIVERY)} className="text-2xl font-black text-white uppercase tracking-wider">Dalių pristatymas</button>
           <button onClick={() => scrollTo(SectionId.CONTACT)} className="text-2xl font-black text-white uppercase tracking-wider">Kontaktai</button>
-          <a href="tel:+37067000800" className="mt-8 flex items-center gap-2 justify-center w-full bg-red-600 text-white py-4 rounded-xl font-bold text-xl uppercase">
-            <Phone size={24} /> Skambinti
-          </a>
+
+          <div className="mt-8 flex flex-col gap-4">
+            <a href="tel:+37067000800" className="flex items-center gap-2 justify-center w-full bg-red-600 text-white py-4 rounded-xl font-bold text-xl uppercase">
+              <Phone size={24} /> Skambinti
+            </a>
+            <a
+              href="https://www.facebook.com/profile.php?id=61570498691373"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 justify-center w-full bg-zinc-900 text-white py-4 rounded-xl font-bold text-xl uppercase"
+            >
+              <Facebook size={24} /> Facebook
+            </a>
+          </div>
         </div>
       </div>
     </>

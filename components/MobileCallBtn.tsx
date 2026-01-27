@@ -3,18 +3,35 @@ import { Phone } from 'lucide-react';
 
 export const MobileCallBtn: React.FC = () => {
     const [isVisible, setIsVisible] = React.useState(false);
+    const [isFooterVisible, setIsFooterVisible] = React.useState(false);
 
     React.useEffect(() => {
         const handleScroll = () => {
-            // Show button after scrolling down 300px
             setIsVisible(window.scrollY > 300);
         };
 
         window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
+
+        // Hide button when footer is visible
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                setIsFooterVisible(entry.isIntersecting);
+            },
+            { threshold: 0.1 }
+        );
+
+        const footer = document.querySelector('footer');
+        if (footer) {
+            observer.observe(footer);
+        }
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+            if (footer) observer.unobserve(footer);
+        };
     }, []);
 
-    if (!isVisible) return null;
+    if (!isVisible || isFooterVisible) return null;
 
     return (
         <div className="fixed bottom-6 left-1/2 transform -translate-x-1/2 z-50 md:hidden w-full px-6 max-w-sm transition-opacity duration-300">

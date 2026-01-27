@@ -2,7 +2,7 @@
 if($_POST) {
 
     // Recipient
-    $to      = "info@airbagucentras.lt";
+    $to      = "airbagucentras@gmail.com";
 
     // Subject
     $subject = "Inquiry - AIRBAG CENTRAS";
